@@ -257,9 +257,9 @@ All API errors are returned in the following format:
 
 - **Format:** `String`
 - **Values:**
-    - `$` (USD)
-    - `€` (EUR)
-    - `₹` (INR)
+    - `$`
+    - `€`
+    - `₹`
     - … (See full list in the `CURRENCIES` variable in ```app/main/data.py```)
 
 ### Coffee Price
