@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <script src="../static/assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Mark Otto, Jacob Thornton, and Bootstrap contributors" name="author">
+    <meta content="Hugo 0.122.0" name="generator">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <title>Cafe Connect - Repository</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="../static/css/custom/table_styles/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/custom/table_styles/css/table_styles.css" rel="stylesheet">
+    <link href="../static/css/bootstrap/vendor_2/aos/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="../static/css/custom/custom.css" rel="stylesheet">
+    <link href="../static/css/custom/main.css" rel="stylesheet">
+
+    <style>
+        main {
+            position: relative;
+            min-height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 1;
+        }
+
+        main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #21201E, #85785D);
+            z-index: -1;
+        }
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        #header {
+            background: linear-gradient(to left, #21201E, #333333, #85785D)
+        }
+
+        h2 {
+            font-family: var(--nav-font);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .pagination .page-btn {
+            background-color: #ffc451;
+            color: #000;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .pagination .page-btn:hover {
+            background-color: #e6b347;
+        }
+        .pagination .page-btn:focus {
+            outline: none;
+        }
+
+        .entries-info {
+            text-align: right;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .wifi-rating svg {
+            fill: #ffc451;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+            padding: 0.3rem 0.8rem;
+            border: 2.7px solid transparent;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .search-box:hover {
+            border-color: #ffc451;
+            box-shadow: 0 0 7px #ffc451;
+        }
+        .search-input {
+            background-color: white;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            color: #000;
+            margin-right: 0.5rem;
+            flex: 1;
+            width: 250px;
+        }
+        .search-input::placeholder {
+            color: #000;
+        }
+        .search-button, .search-button:focus{
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            outline: none;
+        }
+        .search-icon {
+            fill: currentColor;
+        }
+
+        footer .container {
+            max-width: 1325px;
+        }
+        .footer {
+            background: linear-gradient(to left, #141413, #1e1e1e, #292929, #333333);
+            height: 100%;
+            padding: 5px;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SVG Icons -->
+    <svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="twitter" viewBox="0 0 16 16">
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+        </symbol>
+        <symbol id="discord" viewBox="0 0 16 16">
+            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.466-.559-6.449-2.32-9.107a.034.034 0 0 0-.021-.018ZM5.78 10.837c-.789 0-1.448-.724-1.448-1.612 0-.889.64-1.613 1.448-1.613.812 0 1.462.73 1.448 1.613 0 .888-.64 1.612-1.448 1.612Zm4.447 0c-.788 0-1.448-.724-1.448-1.612 0-.889.64-1.613 1.448-1.613.812 0 1.462.73 1.448 1.613 0 .888-.636 1.612-1.448 1.612Z"/>
+        </symbol>
+        <symbol id="github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+        </symbol>
+    </svg>
+
+    <!-- Navbar -->
+    <header class="header d-flex align-items-center fixed-top" id="header">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+            <a class="logo d-flex align-items-center me-auto me-lg-0" href="{{ url_for('main.home') }}">
+                <h1 class="sitename">CC</h1>
+                <span class="square-period-logo"></span>
+            </a>
+            <nav class="navmenu" id="navmenu">
+                <ul>
+                    <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                    <li><a href="{{ url_for('main.register') }}">Register</a></li>
+                    <li><a href="{{ url_for('main.add_cafe') }}">Add Cafe</a></li>
+                    <li class="active"><a href="{{ url_for('main.get_all_cafes') }}">Cafe Repository</a></li>
+                    <li><a href="">FAQ</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+            {% if not find_nearby %}
+            <div class="search-box">
+                <form action="{{ url_for('main.search_cafes') }}" class="form-inline" method="GET">
+                    <input class="search-input" name="query" placeholder="Search" type="text">
+                    <button class="search-button" type="submit">
+                        <svg aria-hidden="true" class="search-icon" height="20" viewBox="0 0 20 20" width="20">
+                            <path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533
+                        0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418
+                        2.9419 7.7115 0 10.6533z"
+                                  fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flashes">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <main>
+        {% if find_nearby %}
+        <div class="container d-flex justify-content-center align-items-center min-vh-100 custom-bg">
+            <div class="form-container text-center">
+                <form action="{{ url_for('main.search_cafes') }}" class="w-100" method="GET">
+                    <h2 class="h2 text-white mb-5 fw-normal">
+                        Find cafes near you<span class="square-period"></span>
+                    </h2>
+                    <div class="row mb-3">
+                        <div class="col-md-6 offset-md-3 mb-3">
+                            {{ form.city(class_="form-control", placeholder="Enter city") }}
+                        </div>
+                        <div class="col-md-6 offset-md-3 mb-3">
+                            {{ form.country(class_="form-control", placeholder="Enter country") }}
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        {% else %}
+        <!-- Table -->
+        <div class="content">
+            <div class="container">
+                <h2 class="h1 text-white mb-3 fw-normal">
+                    {% if is_rated %} Top Rated
+                    {% elif mode == 'search' %} Results
+                    {% else %} All Cafes
+                    {% endif %}
+                </h2>
+                <div class="entries-info" id="entries-info">showing entries 1-10 of {{ cafe_rows|length }}</div>
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                        <tr>
+                            {% for column in cafe_columns %}
+                            <th scope="col"> {{ column }}</th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody id="cafe-rows">
+                            <!-- Cafe rows will be inserted here with Javascript-->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button class="page-btn" id="prev-btn"> <</button>
+                    <button class="page-btn" id="next-btn"> ></button>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white" data-bs-theme="dark">
+        <div class="container text-center">
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+                 style="border-color: #4D5256 !important">
+                <p>&copy; 2024 CafeConnect Inc. All rights reserved.</p>
+                <p class="mb-0">
+                    <a class="terms-footer" href="#">Terms of Service</a> |
+                    <a class="terms-footer" href="#">Privacy Policy</a>
+                </p>
+                <div class="social-links d-flex">
+                    <a class="twitter d-flex align-items-center justify-content-center" href="#">
+                        <svg class="bi" height="24" width="24">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </a>
+                    <a class="instagram d-flex align-items-center justify-content-center" href="#">
+                        <svg class="bi" height="24" width="24">
+                            <use xlink:href="#instagram"></use>
+                        </svg>
+                    </a>
+                    <a class="discord d-flex align-items-center justify-content-center" href="#">
+                        <svg class="bi" height="24" width="24">
+                            <use xlink:href="#discord"></use>
+                        </svg>
+                    </a>
+                    <a class="github d-flex align-items-center justify-content-center" href="#">
+                        <svg class="bi" height="24" width="24">
+                            <use xlink:href="#github"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../static/css/custom/table_styles/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/css/custom/table_styles/js/popper.min.js"></script>
+    <script src="../static/css/custom/table_styles/js/bootstrap.min.js"></script>
+    <script src="../static/css/custom/table_styles/js/main.js"></script>
+    <script>
+        const cafeRows = [
+            {% for row in cafe_rows %}
+            {
+                name: "{{ row['name'] }}",
+                map_url: "{{ row['map_url'] }}",
+                city: "{{ row['city'] }}",
+                country: "{{ row['country'] }}",
+                currency: "{{ row['currency'] }}",
+                coffee_price: "{{ row['coffee_price'] }}",
+                wifi_strength: "{{ row['wifi_strength'] }}",
+                seats: "{{ row['seats'] }}",
+                has_sockets: "{{ 'Yes' if row['has_sockets'] else 'No' }}",
+                has_toilet: "{{ 'Yes' if row['has_toilet'] else 'No' }}",
+                full_rating: "{{ row['full_rating'] }}",
+            },
+            {% endfor %}
+        ];
+
+        const getStarIcons = (rating) => {
+            let starIcons = '';
+            for (let i = 0; i < rating; i++) {
+                starIcons += `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffc451" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.396.198-.86-.149-.746-.592l.83-3.73-2.717-2.454c-.329-.297-.158-.888.283-.95l3.898-.336L8 .792l1.65 3.59 3.898.336c.441.038.612.653.283.95l-2.717 2.454.83 3.73c.113.443-.35.79-.746.592L8 13.187l-3.389 2.256z"/>
+                    </svg>
+                `;
+            }
+            for (let i = rating; i < 5; i++) {
+                starIcons += `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+                    </svg>
+                `;
+            }
+            return starIcons;
+        };
+
+        const getWiFiIcons = (strength) => {
+            let wifiIcons = '';
+            for (let i = 0; i < strength; i++) {
+                wifiIcons += `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-wifi" viewBox="0 0 16 16">
+                        <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.44 12.44 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.52.52 0 0 0 .668.05A11.45 11.45 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049"
+                            stroke="#ffc451", stroke-width="0.8"/>
+                        <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.46 9.46 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065m-2.183 2.183c.226-.226.185-.605-.1-.75A6.5 6.5 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.5 5.5 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091zM9.06 12.44c.196-.196.198-.52-.04-.66A2 2 0 0 0 8 11.5a2 2 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"
+                            stroke="#ffc451", stroke-width="0.5"/>
+                    </svg>
+                `;
+            }
+            if (strength === 0) {
+                wifiIcons += `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-wifi-off" viewBox="0 0 16 16">
+                        <path d="M10.706 3.294A12.6 12.6 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.52.52 0 0 0 .668.05A11.45 11.45 0 0 1 8 4q.946 0 1.852.148zM8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065 8.45 8.45 0 0 1 3.51-1.27zm2.596 1.404.785-.785q.947.362 1.785.907a.482.482 0 0 1 .063.745.525.525 0 0 1-.652.065 8.5 8.5 0 0 0-1.98-.932zM8 10l.933-.933a6.5 6.5 0 0 1 2.013.637c.285.145.326.524.1.75l-.015.015a.53.53 0 0 1-.611.09A5.5 5.5 0 0 0 8 10m4.905-4.905.747-.747q.886.451 1.685 1.03a.485.485 0 0 1 .047.737.52.52 0 0 1-.668.05 11.5 11.5 0 0 0-1.811-1.07M9.02 11.78c.238.14.236.464.04.66l-.707.706a.5.5 0 0 1-.707 0l-.707-.707c-.195-.195-.197-.518.04-.66A2 2 0 0 1 8 11.5c.374 0 .723.102 1.021.28zm4.355-9.905a.53.53 0 0 1 .75.75l-10.75 10.75a.53.53 0 0 1-.75-.75z"
+                            stroke="#ffc451", stroke-width="0.5"/>
+                    </svg>
+                `;
+            }
+            return wifiIcons;
+        };
+
+        let currentPage = 1;
+        const rowsPerPage = 12;
+
+        function displayRows(page) {
+            const tableBody = document.getElementById('cafe-rows');
+            tableBody.innerHTML = '';
+
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const paginatedRows = cafeRows.slice(start, end);
+
+            paginatedRows.forEach(row => {
+                const rowElement = document.createElement('tr');
+                rowElement.innerHTML = `
+                    <td>${row.name}</td>
+                    <td><a href="${row.map_url}">Map Link</a></td>
+                    <td>${row.city}, ${row.country}</td>
+                    <td>${row.currency} ${row.coffee_price}</td>
+                    <td class="wifi-rating">${getWiFiIcons(parseInt(row.wifi_strength))}</td>
+                    <td>${row.seats}</td>
+                    <td>${row.has_sockets}</td>
+                    <td>${row.has_toilet}</td>
+                    <td class="full-rating">${getStarIcons(parseInt(row.full_rating))}</td>
+                `;
+                tableBody.appendChild(rowElement);
+            });
+
+        // Update the entries info
+        const entriesInfo = document.getElementById('entries-info');
+            entriesInfo.textContent = `Showing entries ${start + 1}-${Math.min(end, cafeRows.length)} of ${cafeRows.length}`;
+        }
+
+        function updatePagination() {
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage * rowsPerPage >= cafeRows.length;
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayRows(currentPage);
+                updatePagination();
+            }
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentPage * rowsPerPage < cafeRows.length) {
+                currentPage++;
+                displayRows(currentPage);
+                updatePagination();
+            }
+        });
+
+        // Initial display
+        displayRows(currentPage);
+        updatePagination();
+    </script>
+</body>
+</html>

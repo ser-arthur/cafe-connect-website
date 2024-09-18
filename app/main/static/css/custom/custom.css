@@ -1,0 +1,158 @@
+.feature-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: .75rem;
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: .75rem;
+}
+
+.text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
+.text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
+.text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
+
+.card-cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.feature-icon-small {
+  width: 3rem;
+  height: 3rem;
+}
+
+.feature-icon-small i {
+    color: #ffcc00; /* Yellow color for the SVG icons */
+}
+.get-started-btn {
+    background-color: var(--accent-color);
+    border-color:  var(--accent-color);
+    color: #333333;
+}
+
+.get-started-btn:hover {
+    background-color:  #333333;
+    border-color:   #333333;
+    color: var(--accent-color);
+}
+
+.get-started-btn:active {
+    background-color: #333333 !important;
+    border-color: #333333 !important;
+    color: var(--accent-color) !important;
+}
+
+.more-btn {
+    background-color: #333333;
+    border-color: #333333;
+    color: var(--accent-color);
+}
+
+.more-btn:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #333333;
+}
+
+.more-btn:active {
+   background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    color: #333333 !important;
+}
+
+.icon-bg {
+    background-color: #333333 !important; /* Dark grey background */
+    color: #ffcc00; /* Yellow icons */
+}
+
+.cafe-name {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.cafe-name a:hover {
+    color: var(--accent-color) !important;
+    margin-bottom: 0;
+}
+
+.custom-margin {
+    margin-bottom: 70px;
+    background-color: white;
+}
+
+.custom-div {
+    height: 30px !important;
+}
+
+.custom-icon {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.custom-footer {
+    background: linear-gradient(to bottom, #333333, #73726D);
+    color: white; /* text color*/
+    padding: 20px;
+}
+
+.social-links a {
+    background-color: transparent !important;
+    padding: 0;
+    border: none;
+    margin-left: 3px; /* Space between icons */
+    display: flex; /* Align items centrally */
+    align-items: center; /* Center items vertically */
+    justify-content: center;  /* Center items horizontally */
+}
+
+.social-links svg {
+    fill: #ffffff; /* Ensure the icon color is white */
+    width: 25px;
+    height: 25px;
+}
+
+.social-links svg:hover {
+    fill: var(--accent-color)
+}
+
+.terms-footer {
+   color: white;
+}
+
+.terms-footer:hover {
+   color: white;
+   color: #0d6dd3;
+}
+
+/* Flash alerts styling for index page*/
+
+.alert {
+    padding: 15px;
+    margin: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flashes {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    z-index: 1000;
+}
