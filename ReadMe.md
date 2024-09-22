@@ -67,10 +67,27 @@ The application is also deployed and accessible online at [CafeConnect](https://
 
 <br>
 
-| ![Image 1](website_images/1.png)   | ![Image 2](website_images/2.png)   |
-|------------------------------------|------------------------------------|
-| ![Image 3](website_images/3.png)   | ![Image 4](website_images/4.png)   |
-| ![Image 5](website_images/5.png)   | ![Image 6](website_images/6.png)   |
+<table>
+    <tr>
+        <td><img src="website_images/1.png" width="800"></td>
+    </tr>
+    <tr>
+        <td><img src="website_images/2.png" width="800"></td>
+    </tr>
+    <tr>
+        <td><img src="website_images/3.png" width="800"></td>
+    </tr>
+    <tr>
+        <td><img src="website_images/4.png" width="800"></td>
+    </tr>
+    <tr>
+        <td><img src="website_images/5.png" width="800"></td>
+    </tr>
+    <tr>
+        <td><img src="website_images/6.png" width="800"></td>
+    </tr>
+</table>
+
 
 ## API Documentation
 Check the [API](API.md) file for details on using the API.
