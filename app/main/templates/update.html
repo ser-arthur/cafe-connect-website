@@ -310,10 +310,28 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../static/css/bootstrap/vendor_2/aos/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../static/assets/js/main.js"></script>
+    <script>
+        // Update the dropdown menu background based on the toggle button visibility
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.querySelector('.mobile-nav-toggle');
+            const navMenu = document.querySelector('.navmenu ul');
+
+            function updateNavMenuBackground() {
+                if (toggleButton.offsetParent !== null) {
+                    navMenu.style.backgroundColor = 'rgba(133, 120,93, 0.8)';
+                } else {
+                    navMenu.style.backgroundColor = '';
+                }
+            }
+            window.addEventListener('resize', updateNavMenuBackground);
+            updateNavMenuBackground();
+        });
+    </script>
 </body>
 </html>

@@ -114,6 +114,20 @@
             margin-top: -20px;
         }
 
+        .join-community h1 {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 1500px) {
+            .community-text {
+                display: block;
+            }
+        }
+        .community-text {
+            line-height: 1.2;
+            padding-top: 10px;
+        }
+
         .error {
             margin-top: -120px;
         }
@@ -229,7 +243,7 @@
                     {% if not form.errors %}
                     <h1 class="display-4 fw-bold lh-1 mb-3 text-white" data-aos="fade-right"
                         data-aos-delay="200" style="font-family: var(--nav-font);">
-                        Join the community<span class="square-period"></span>
+                        Join the&nbsp;<span class="community-text">community<span class="square-period"></span></span>
                     </h1>
                     <p class="col-lg-10 fs-5 text-body-secondary" data-aos="fade-right" data-aos-delay="300"
                        style="text-align: justify; color: #A0A0A0 !important;">
@@ -239,7 +253,7 @@
                     {% else %}
                     <h1 class="display-4 fw-bold lh-1 text-white mb-3 mt-3" data-aos="fade-right"
                         data-aos-delay="200" style="font-family: var(--nav-font); font-size: 2.8rem;">
-                        Oops! something went wrong<span class="square-period"></span>
+                        Oops! something went <span style="white-space: nowrap;">wrong<span class="square-period"></span></span>
                     </h1>
                     <p class="col-lg-10 text-body-secondary" data-aos="fade-right" data-aos-delay="300"
                        style="text-align: justify; font-size: 1.1rem; color: #B8B8B8 !important;">
@@ -345,8 +359,8 @@
     <div id="preloader"></div>
 
     <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../static/css/bootstrap/vendor_2/aos/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -369,6 +383,22 @@
                     input.disabled = true;
                 });
             }
+        });
+
+        // Update the dropdown menu background based on the toggle button visibility
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.querySelector('.mobile-nav-toggle');
+            const navMenu = document.querySelector('.navmenu ul');
+
+            function updateNavMenuBackground() {
+                if (toggleButton.offsetParent !== null) {
+                    navMenu.style.backgroundColor = 'rgba(133, 120,93, 0.8)';
+                } else {
+                    navMenu.style.backgroundColor = '';
+                }
+            }
+            window.addEventListener('resize', updateNavMenuBackground);
+            updateNavMenuBackground();
         });
     </script>
 </body>

@@ -283,7 +283,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <a class="btn btn-primary more-btn" href="#">See more</a>
+                    <a class="btn btn-primary more-btn" href="{{ url_for('main.get_all_cafes') }}">See more</a>
                 </div>
             </div>
             <div class="custom-margin"></div>
@@ -388,6 +388,22 @@
                     flash.style.display = 'none';
                 });
             }, 4000);
+        });
+
+        // Update the dropdown menu background based on the toggle button visibility
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.querySelector('.mobile-nav-toggle');
+            const navMenu = document.querySelector('.navmenu ul');
+
+            function updateNavMenuBackground() {
+                if (toggleButton.offsetParent !== null) {
+                    navMenu.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+                } else {
+                    navMenu.style.backgroundColor = '';
+                }
+            }
+            window.addEventListener('resize', updateNavMenuBackground);
+            updateNavMenuBackground();
         });
     </script>
 </body>

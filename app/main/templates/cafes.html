@@ -19,12 +19,12 @@
           rel="stylesheet">
 
     <!-- CSS -->
+    <link href="../static/css/bootstrap/vendor_2/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="../static/css/custom/table_styles/css/bootstrap.min.css" rel="stylesheet">
     <link href="../static/css/custom/table_styles/css/table_styles.css" rel="stylesheet">
     <link href="../static/css/bootstrap/vendor_2/aos/aos.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link href="../static/css/custom/custom.css" rel="stylesheet">
     <link href="../static/css/custom/main.css" rel="stylesheet">
+    <link href="../static/css/custom/custom.css" rel="stylesheet">
 
     <style>
         main {
@@ -54,6 +54,31 @@
 
         #header {
             background: linear-gradient(to left, #21201E, #333333, #85785D)
+        }
+
+         .nav-container {
+            justify-content: space-between;
+        }
+
+         @media (max-width: 650px) {
+            .logo {
+                flex: 1;
+                margin-left: -90px;
+                margin-right: auto;
+                padding-left: 3px;
+            }
+            .search-box {
+                flex: 1;
+                position: absolute;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .mobile-nav-toggle {
+                flex: 1;
+                margin-left: 350px;
+                margin-right: auto;
+                cursor: pointer;
+            }
         }
 
         h2 {
@@ -134,6 +159,7 @@
         footer .container {
             max-width: 1325px;
         }
+
         .footer {
             background: linear-gradient(to left, #141413, #1e1e1e, #292929, #333333);
             height: 100%;
@@ -162,12 +188,15 @@
     </svg>
 
     <!-- Navbar -->
-    <header class="header d-flex align-items-center fixed-top" id="header">
+    <header class="header d-flex align-items-center fixed-top" id="header" data-aos="fade-right">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+            <div class="nav-container">
             <a class="logo d-flex align-items-center me-auto me-lg-0" href="{{ url_for('main.home') }}">
                 <h1 class="sitename">CC</h1>
                 <span class="square-period-logo"></span>
             </a>
+            </div>
+
             <nav class="navmenu" id="navmenu">
                 <ul>
                     <li><a href="{{ url_for('main.home') }}">Home</a></li>
@@ -178,6 +207,7 @@
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
+
             {% if not find_nearby %}
             <div class="search-box">
                 <form action="{{ url_for('main.search_cafes') }}" class="form-inline" method="GET">
@@ -212,7 +242,7 @@
         <div class="container d-flex justify-content-center align-items-center min-vh-100 custom-bg">
             <div class="form-container text-center">
                 <form action="{{ url_for('main.search_cafes') }}" class="w-100" method="GET">
-                    <h2 class="h2 text-white mb-5 fw-normal">
+                    <h2 class="h2 text-white mb-5 fw-normal" data-aos="fade-left">
                         Find cafes near you<span class="square-period"></span>
                     </h2>
                     <div class="row mb-3">
@@ -232,14 +262,14 @@
         <!-- Table -->
         <div class="content">
             <div class="container">
-                <h2 class="h1 text-white mb-3 fw-normal">
+                <h2 class="h1 text-white mb-3 fw-normal" data-aos="fade-left">
                     {% if is_rated %} Top Rated
                     {% elif mode == 'search' %} Results
                     {% else %} All Cafes
                     {% endif %}
                 </h2>
                 <div class="entries-info" id="entries-info">showing entries 1-10 of {{ cafe_rows|length }}</div>
-                <div class="table-responsive">
+                <div class="table-responsive" data-aos="fade-left">
                     <table class="table table-striped custom-table">
                         <thead>
                         <tr>
@@ -299,11 +329,19 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="../static/css/bootstrap/vendor_2/aos/aos.js"></script>
     <script src="../static/css/custom/table_styles/js/jquery-3.3.1.min.js"></script>
     <script src="../static/css/custom/table_styles/js/popper.min.js"></script>
     <script src="../static/css/custom/table_styles/js/bootstrap.min.js"></script>
     <script src="../static/css/custom/table_styles/js/main.js"></script>
+    <script src="../static/assets/js/main.js"></script>
     <script>
+        AOS.init({
+            duration: 800,
+            easing: 'slide',
+            once: true,
+        });
+
         const cafeRows = [
             {% for row in cafe_rows %}
             {
@@ -420,6 +458,22 @@
         // Initial display
         displayRows(currentPage);
         updatePagination();
+
+        // Update the dropdown menu background based on the toggle button visibility
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.querySelector('.mobile-nav-toggle');
+            const navMenu = document.querySelector('.navmenu ul');
+
+            function updateNavMenuBackground() {
+                if (toggleButton.offsetParent !== null) {
+                    navMenu.style.backgroundColor = 'rgba(133, 120,93, 0.85)';
+                } else {
+                    navMenu.style.backgroundColor = '';
+                }
+            }
+        window.addEventListener('resize', updateNavMenuBackground);
+        updateNavMenuBackground();
+        });
     </script>
 </body>
 </html>
