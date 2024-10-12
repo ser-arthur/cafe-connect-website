@@ -23,9 +23,9 @@ Stay tuned!
 ## Tech Stack
 
 - **Flask**: Backend framework.
-- **Bootstrap & Javascript**: Responsive UI design and interactive front-end features.
+- **Bootstrap & Javascript**: UI design and interactive front-end.
 - **SQLAlchemy**: ORM for database management.
-- **Flask**-WTF: Form handling and validation.
+- **Flask-WTF**: Form handling and validation.
 - **Flask-Login**: User session management.
 - **SQLite**: Database for storing cafe and user data.
 - **Flask-RESTful**: API creation and management.
@@ -98,7 +98,7 @@ Feel free to contribute to the project by submitting issues or pull requests.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
+This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE.txt) file for details.
 
 ## Author
 **Kobby S. Arthur**
