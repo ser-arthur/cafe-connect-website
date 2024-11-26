@@ -17,6 +17,7 @@ Upcoming features in the future:
 - **Community Reviews**: Users will be able to leave and read reviews of cafes to help others find the best spots.
 - **Personalized Recommendations**: Cafe suggestions based on user preferences.
 - **Interactive Map**: An interactive map to visualize cafe locations and see nearby options.
+- **Cafe Gallery**: Each cafe will display a gallery of images to provide users with a visual overview of the ambiance, amenities, and more. Images will be contributed by admins and users, making the experience more community-driven.
 
 Stay tuned!
 
