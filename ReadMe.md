@@ -37,8 +37,8 @@ Stay tuned!
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/ser-arthur/cafe-connect.git
-   cd cafe-connect
+   git clone https://github.com/ser-arthur/cafe-connect-website.git
+   cd cafe-connect-website
    ```
 
 2. **Create a Virtual Environment**
